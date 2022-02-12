@@ -70,7 +70,6 @@ def _graal_binary_implementation(ctx):
     args.add("--no-server")
     args.add("--no-fallback")
     args.add("-cp", ":".join([f.path for f in classpath_depset.to_list()]))
-    args.add("-H:-CheckToolchain")
     args.add("-H:Class=%s" % ctx.attr.main_class)
     args.add("-H:Name=%s" % binary.path)
     args.add("-H:+ReportExceptionStackTraces")
